@@ -9,6 +9,7 @@ A continuación, se detallan los requisitos y pasos para utilizar el programa.
 ## Requisitos para el funcionamiento del programa:
 
 - Computadora con Racket v8.8 instalado.
+- Diagrama (Visualizacion): Mermaid Editor, Mermaid Preview, Mermaid Markdown Syntax Highlighting
 
 ## En caso de no contar con Racket instalado:
 Descargar Racket desde la página oficial de Racket: https://racket-lang.org/.
