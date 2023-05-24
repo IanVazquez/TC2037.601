@@ -1,0 +1,24 @@
+.palabra_reservada {
+    color: blue;
+  }
+.op_logical{
+  color: blueviolet;
+}
+.op_non_logical{
+  color: #83864d;
+}
+.default_functions{
+  color: rgb(84, 166, 84);
+}
+.others{
+  color: #efff5d;
+}
+.comments{
+  color: rgb(0, 255, 0);
+}
+.string{
+  color: orange;
+}
+.all{
+  color: white;
+}
