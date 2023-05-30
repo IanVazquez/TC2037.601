@@ -37,6 +37,20 @@ with
 yield
 
 ()
++
+,
+-
+=
+/
+*
 
 
 
+
+==
++=
+
+
+Numeros
+
+Texto
