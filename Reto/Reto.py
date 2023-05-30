@@ -36,3 +36,21 @@ while
 with
 yield
 
+()
++
+,
+-
+=
+/
+*
+
+
+
+
+==
++=
+
+
+Numeros
+
+Texto
