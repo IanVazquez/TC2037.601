@@ -22,68 +22,55 @@ defmodule HTMLGenerator do
   IO.puts("HTML code created in #{file_path}")
 end
 
-defp highlighted_code(file_path) do
-  categories = categorize_file(file_path)
+defmodule HTMLGenerator do
+  def create_html_file(file_path) do
+    file_content = File.read!(file_path)
+    categories = categorize_file(file_content)
+    html_content = generate_html(categories)
 
-  categories
-  |> Enum.map(fn {category, words} ->
-    category_tag = category_to_tag(category)
-    words_html = Enum.map(words, &word_to_html(&1))
+    html_file_path = "output.html"
+    File.write(html_file_path, html_content)
 
-    "<#{category_tag}>#{Enum.join(words_html, " ")}</#{category_tag}>"
-  end)
-  |> Enum.join("\n")
-end
-
-defp categorize_file(file_path) do
-  file_content = File.read!(file_path)
-  words = String.split(file_content, ~r/\b\w+\b/)
-
-  categories = %{
-    "Atom" => ~r/^(defmodule|def|do|end|when)$/,
-    "Identifier" => ~r/^[a-zA-Z_][a-zA-Z0-9_]*$/,
-    "String" => ~r/^".*"$/,
-    "Number" => ~r/^\d+$/,
-    "Boolean" => ~r/^(true|false)$/,
-    "Operator" => ~r/^(\+|-|\*|\/|\^)$/
-  }
-
-  Enum.group_by(words, fn word ->
-    Enum.find_key(categories, &(Regex.match?(Map.get(categories, &1), word)))
-  end)
-end
-
-defp categorize_word(word) do
-  case String.to_existing_atom(word) do
-    :ok -> "Atom"
-    _ ->
-      case String.to_integer(word) do
-        {:ok, _} -> "Number"
-        _ ->
-          case String.to_float(word) do
-            {:ok, _} -> "Float"
-            _ ->
-              case String.downcase(word) do
-                "true" or "false" -> "Boolean"
-                _ -> "Identifier"
-              end
-          end
-      end
+    IO.puts("HTML file created: #{html_file_path}")
   end
-end
 
-defp category_to_tag(category) do
-  case category do
-    "Atom" -> "span class=\"atom\""
-    "Number" -> "span class=\"number\""
-    "Float" -> "span class=\"float\""
-    "Boolean" -> "span class=\"boolean\""
-    "Identifier" -> "span class=\"identifier\""
-    _ -> "span"  # Default tag for unrecognized categories
+  defp categorize_file(file_content) do
+    words = String.split(file_content, ~r/\b\w+\b/)
+    Enum.reduce(words, %{}, fn word, acc ->
+      category = categorize_word(word)
+      Map.update(acc, category, [word], & [&1 | word])
+    end)
   end
-end
 
-defp word_to_html(word) do
-  "<span>#{word}</span>"
-end
+  defp categorize_word(word) do
+    case word do
+      _ when is_atom(word) -> :atom
+      _ when is_number(word) -> :number
+      _ when is_binary(word) -> :string
+      _ -> :identifier
+    end
+  end
+
+  defp generate_html(categories) do
+    categories
+    |> Enum.map(fn {category, words} ->
+      tag = category_to_tag(category)
+      html_words = Enum.map(words, &word_to_html(&1))
+      "<#{tag}>#{Enum.join(html_words)}</#{tag}>"
+    end)
+    |> Enum.join("\n")
+  end
+
+  defp category_to_tag(category) do
+    case category do
+      :atom -> "span class=\"atom\""
+      :number -> "span class=\"number\""
+      :string -> "span class=\"string\""
+      _ -> "span class=\"identifier\""
+    end
+  end
+
+  defp word_to_html(word) do
+    "<span>#{word}</span>"
+  end
 end
