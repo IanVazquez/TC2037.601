@@ -1,4 +1,8 @@
-defmodule HTMLGenerator do
+
+
+
+
+defmodule Archivo do
   def create_html_file do
     html_content = """
       <!DOCTYPE html>
@@ -19,58 +23,102 @@ defmodule HTMLGenerator do
 
     File.write(file_path, html_content)
 
-  IO.puts("HTML code created in #{file_path}")
-end
-
-defmodule HTMLGenerator do
-  def create_html_file(file_path) do
-    file_content = File.read!(file_path)
-    categories = categorize_file(file_content)
-    html_content = generate_html(categories)
-
-    html_file_path = "output.html"
-    File.write(html_file_path, html_content)
-
-    IO.puts("HTML file created: #{html_file_path}")
+    IO.puts("HTML code created in #{file_path}")
   end
 
-  defp categorize_file(file_content) do
-    words = String.split(file_content, ~r/\b\w+\b/)
-    Enum.reduce(words, %{}, fn word, acc ->
-      category = categorize_word(word)
-      Map.update(acc, category, [word], & [&1 | word])
-    end)
-  end
+  def read_file(file_path) do
+    categories = %{
+      "String" => [],
+      "Integer" => [],
+      "Boolean" => [],
+      "Identifier" => [],
+      "Function" => []
+    }
 
-  defp categorize_word(word) do
-    case word do
-      _ when is_atom(word) -> :atom
-      _ when is_number(word) -> :number
-      _ when is_binary(word) -> :string
-      _ -> :identifier
+    with {:ok, file} <- File.open(file_path, [:read]) do
+      Enum.each(IO.stream(file, :line), fn line ->
+        line |> IO.inspect(:label, "line:")
+        words = Regex.scan(~r/\b\w+\b/, line)
+
+        Enum.each(words, fn {_, word} ->
+          category =
+            if is_literal(word) do
+              determine_literal_category(word)
+            else
+              if is_word_function(word), do: "Function", else: determine_identifier_category(word)
+            end
+
+          categories = update_categories(categories, category, word)
+        end)
+      end)
     end
-  end
 
-  defp generate_html(categories) do
     categories
-    |> Enum.map(fn {category, words} ->
-      tag = category_to_tag(category)
-      html_words = Enum.map(words, &word_to_html(&1))
-      "<#{tag}>#{Enum.join(html_words)}</#{tag}>"
-    end)
-    |> Enum.join("\n")
   end
 
-  defp category_to_tag(category) do
-    case category do
-      :atom -> "span class=\"atom\""
-      :number -> "span class=\"number\""
-      :string -> "span class=\"string\""
-      _ -> "span class=\"identifier\""
+  def update_categories(categories, category, word) do
+    Map.update(categories, category, [word], &([&1 | &2]))
+  end
+
+  def is_literal(word) do
+    try do
+      Code.eval_string(word)
+      true
+    rescue
+      ArgumentError -> false
     end
   end
 
-  defp word_to_html(word) do
-    "<span>#{word}</span>"
+  def determine_literal_category(literal) do
+    case Code.eval_string(literal) do
+      s when is_binary(s) -> "String"
+      i when is_integer(i) -> "Integer"
+      b when is_boolean(b) -> "Boolean"
+      _ -> nil
+    end
+  end
+
+  def is_word_function(word) do
+    word_pattern = ~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/
+    reserved_words = ~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/
+    arithmetic_operators = ~r/^(\+|-|\*|\/|%)$/
+    comparative_operators = ~r/^(==|!=|>|<|>=|<=)$/
+    Regex.match?(word_pattern, word)
+  end
+
+  def is_logical_operator(word) do
+    logical_operators = ~r/^(and|or|not)$/
+    Regex.match?(logical_operators, word)
+  end
+
+  def is_membership_operator(word) do
+    membership_operators = ~r/^(in|not in)$/
+    Regex.match?(membership_operators, word)
+  end
+
+  def is_identity_operator(word) do
+    identity_operators = ~r/^(is|is not)$/
+    Regex.match?(identity_operators, word)
+  end
+  def is_bit_operator(word) do
+    bit_operators = ~r/^(<<|>>|&|\||\^|~)$/
+    Regex.match?(bit_operators, word)
+  end
+
+  def determine_identifier_category(identifier) do
+    identifier_pattern = ~r/^[a-zA-Z_][a-zA-Z0-9_]*$/
+    if Regex.match?(identifier_pattern, identifier), do: "Identifier", else: nil
+  end
+
+  def get_category_counts(categories) do
+    Enum.into(categories, %{}, fn {category, words} ->
+      {category, length(words)}
+    end)
   end
 end
+
+# Ejemplo de uso
+file_path = "/lexical.py"
+file_categories = Archivo.read_file(file_path)
+counts = Archivo.get_category_counts(file_categories)
+IO.inspect(counts)
