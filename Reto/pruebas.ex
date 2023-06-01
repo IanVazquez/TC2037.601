@@ -50,7 +50,7 @@ defmodule Archivo do
 
   def is_word_function(word) do
     word_pattern = ~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/
-    reserved_words = ~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/
+    reserved_words = ~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield|True|False|None)\b/
     arithmetic_operators = ~r/^(\+|-|\*|\/|%)$/
     comparative_operators = ~r/^(==|!=|>|<|>=|<=)$/
     Regex.match?(word_pattern, word) ||
@@ -107,7 +107,7 @@ defmodule Archivo do
     cond do
       Regex.match?(~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/, word) ->
         "<span class=\"function\">#{word}</span>"
-      Regex.match?(~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/, word) ->
+      Regex.match?(~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield|True|False|None)\b/, word) ->
         "<span class=\"reserved-word\">#{word}</span>"
       Regex.match?(~r/^(\+|-|\*|\/|%)$/, word) ->
         "<span class=\"arithmetic-operator\">#{word}</span>"
