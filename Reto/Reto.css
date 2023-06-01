@@ -1,24 +1,29 @@
-.palabra_reservada {
-    color: blue;
-  }
+.reserved_word {
+  color: blue;
+}/*  False None True and class def is lambda nonlocal not or  */
 .op_logical{
-  color: blueviolet;
-}
+color: blueviolet;
+}/*  as assert async await break continue del elif else if except finally for from global import in pass raise return try while with yield   */
 .op_non_logical{
-  color: #83864d;
-}
+color: #83864d;
+}/*   ( ) , [ ]   */
+.op_mat{
+color:rgb(255, 255, 0)
+}/*  + - = / *   */
+.op_comparison{
+color: pink;
+}/* == !=  */
 .default_functions{
-  color: rgb(84, 166, 84);
-}
-.others{
-  color: #efff5d;
-}
+color: rgb(84, 166, 84);
+}/* print */
+
 .comments{
-  color: rgb(0, 255, 0);
-}
+color: rgb(0, 255, 0);
+}/* Everything after # until a newline is given */
+.number{
+color: orange;
+}/* All kinds of number */
+
 .string{
-  color: orange;
-}
-.all{
-  color: white;
-}
+color: white;
+}/* anything that is not a number and does not meet the conditions mentioned above */
