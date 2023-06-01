@@ -1,7 +1,3 @@
-
-
-
-
 defmodule Archivo do
   def create_html_file do
     html_content = """
@@ -26,34 +22,17 @@ defmodule Archivo do
     IO.puts("HTML code created in #{file_path}")
   end
 
-  def read_file(file_path) do
-    categories = %{
-      "String" => [],
-      "Integer" => [],
-      "Boolean" => [],
-      "Identifier" => [],
-      "Function" => []
-    }
+  def read_file(file_path, "Reto.html") do
+    data = file_path
+           # Read the file, line by line
+           |> File.stream!()
+           # Call a function with each line read
+           |> Enum.map(&shift_line(&1))
+           #|> IO.inspect()
+           |> Enum.join("")
 
-    with {:ok, file} <- File.open(file_path, [:read]) do
-      Enum.each(IO.stream(file, :line), fn line ->
-        line |> IO.inspect(:label, "line:")
-        words = Regex.scan(~r/\b\w+\b/, line)
-
-        Enum.each(words, fn {_, word} ->
-          category =
-            if is_literal(word) do
-              determine_literal_category(word)
-            else
-              if is_word_function(word), do: "Function", else: determine_identifier_category(word)
-            end
-
-          categories = update_categories(categories, category, word)
-        end)
-      end)
-    end
-
-    categories
+    # Store the results in a new file
+    File.write("Reto.html", data)
   end
 
   def update_categories(categories, category, word) do
@@ -84,25 +63,36 @@ defmodule Archivo do
     arithmetic_operators = ~r/^(\+|-|\*|\/|%)$/
     comparative_operators = ~r/^(==|!=|>|<|>=|<=)$/
     Regex.match?(word_pattern, word)
+    Regex.match?(reserved_words, word)
+    Regex.match?(arithmetic_operators, operator)
+    Regex.match?(comparative_operators, operator)
+    Regex.run(word_pattern, word)
+    Regex.run(reserved_words, word)
+    Regex.run(arithmetic_operators, operator)
+    Regex.run(comparative_operators, operator)
   end
 
   def is_logical_operator(word) do
     logical_operators = ~r/^(and|or|not)$/
     Regex.match?(logical_operators, word)
+    Regex.run(logical_operators, word)
   end
 
   def is_membership_operator(word) do
     membership_operators = ~r/^(in|not in)$/
     Regex.match?(membership_operators, word)
+    Regex.run(membership_operators, word)
   end
 
   def is_identity_operator(word) do
     identity_operators = ~r/^(is|is not)$/
     Regex.match?(identity_operators, word)
+    Regex.run(identity_operators, word)
   end
   def is_bit_operator(word) do
     bit_operators = ~r/^(<<|>>|&|\||\^|~)$/
     Regex.match?(bit_operators, word)
+    Regex.run(bit_operators, word)
   end
 
   def determine_identifier_category(identifier) do
