@@ -124,5 +124,5 @@ defmodule Archivo do
 end
 
 # Ejemplo de uso
-file_path = "/path/to/your/file.py"
+file_path = "lexical.py"
 Archivo.create_html_file(file_path)
