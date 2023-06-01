@@ -115,6 +115,7 @@ defmodule Archivo do
         "<span class=\"comparative-operator\">#{word}</span>"
       true -> word
     end
+
   end
 end
 

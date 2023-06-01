@@ -17,9 +17,9 @@ The complexity of the algorithm is determined by the number of lines and words i
 
 ## Instructions on how to run your program
 \
-For the execution of the program, the .read_file() function must be called and it must be given as an argument, it must receive another document, it receives almost any type of document but the syntax highlighter was only developed for python, so for the optimal operation of the program give as argument a document with the extension .py, It should look like this:
+For the execution of the program, first it is necesairy to call the module (in this case "Archivo"),then the .read_file() function must be called and it must be given as an argument, it must receive another document, it receives almost any type of document but the syntax highlighter was only developed for python, so for the optimal operation of the program give as argument a document with the extension .py, It should look like this:
 
-.read_file("lexical.py")
+Archivo.read_file("lexical.py")
 
 ## Execution Time and Complexity
 \
