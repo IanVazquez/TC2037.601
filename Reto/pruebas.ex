@@ -104,20 +104,30 @@ defmodule Archivo do
 
   def format_word(word) do
     if Regex.match?(~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/, word) do
-      return "<span class=\"function\">#{word}</span>"
+      "<span class=\"function\">#{word}</span>"
+    else
+      nil
     end
 
+
     if Regex.match?(~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/, word) do
-      return "<span class=\"reserved-word\">#{word}</span>"
+      "<span class=\"reserved-word\">#{word}</span>"
+    else
+      nil
     end
 
     if Regex.match?(~r/^(\+|-|\*|\/|%)$/, word) do
-      return "<span class=\"arithmetic-operator\">#{word}</span>"
+      "<span class=\"arithmetic-operator\">#{word}</span>"
+    else
+      nil
     end
 
     if Regex.match?(~r/^(==|!=|>|<|>=|<=)$/, word) do
-      return "<span class=\"comparative-operator\">#{word}</span>"
+      "<span class=\"comparative-operator\">#{word}</span>"
+    else
+      nil
     end
+
 
     word
   end
