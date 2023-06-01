@@ -98,28 +98,23 @@ defmodule Archivo do
 
   def shift_line(line) do
     words = String.split(line, ~r/\b/)
-    formatted_words = Enum.map(words, &format_word(&1))
+    formatted_words = Enum.map(words, &format_word/1)
+    formatted_words = Enum.filter(formatted_words, &(&1 != nil))
     Enum.join(formatted_words)
   end
 
   def format_word(word) do
-    if Regex.match?(~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/, word) do
-      return "<span class=\"function\">#{word}</span>"
+    cond do
+      Regex.match?(~r/^[a-zA-Z_][a-zA-Z0-9_]*\(\)$/, word) ->
+        "<span class=\"function\">#{word}</span>"
+      Regex.match?(~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/, word) ->
+        "<span class=\"reserved-word\">#{word}</span>"
+      Regex.match?(~r/^(\+|-|\*|\/|%)$/, word) ->
+        "<span class=\"arithmetic-operator\">#{word}</span>"
+      Regex.match?(~r/^(==|!=|>|<|>=|<=)$/, word) ->
+        "<span class=\"comparative-operator\">#{word}</span>"
+      true -> word
     end
-
-    if Regex.match?(~r/\b(and|as|assert|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b/, word) do
-      return "<span class=\"reserved-word\">#{word}</span>"
-    end
-
-    if Regex.match?(~r/^(\+|-|\*|\/|%)$/, word) do
-      return "<span class=\"arithmetic-operator\">#{word}</span>"
-    end
-
-    if Regex.match?(~r/^(==|!=|>|<|>=|<=)$/, word) do
-      return "<span class=\"comparative-operator\">#{word}</span>"
-    end
-
-    word
   end
 end
 
