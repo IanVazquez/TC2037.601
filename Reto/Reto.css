@@ -6,14 +6,24 @@
 color:rgb(255, 255, 0)
 }/*  + - = / *   */
 
-.comparative_operators{
+.comparative-operator{
 color: pink;
 }/* == != >= <= */
 
-.comments{
+.comment{
 color: rgb(0, 255, 0);
 }/* Everything after # until a newline is given */
 
 .word_pattern{
 color: black;
 }/* anything that is a number or Letter and does not meet the conditions mentioned above */
+
+.parenthesis{
+  color:aqua;
+}/* This ( ) [ ] { } */
+
+.variable{
+  color: darkgreen;
+}/*str int bool char*/
+
+
