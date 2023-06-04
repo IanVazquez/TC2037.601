@@ -6,9 +6,9 @@
     </head>
     <body>
       <!-- Aquí va el resultado del código de Elixir -->
-      <p>import re
+      <p><span class="reserved-word">import</span> re
 
-def read_file(file_path):
+<span class="reserved-word">def</span> read_file(file_path):
     categories = {
         'String': [],
         'Integer': [],
@@ -17,55 +17,55 @@ def read_file(file_path):
         'Function': []
     }
 
-    with open(file_path, 'r') as file:
-        for line in file:
+    <span class="reserved-word">with</span> open(file_path, 'r') <span class="reserved-word">as</span> file:
+        <span class="reserved-word">for</span> line <span class="reserved-word">in</span> file:
             words = re.findall(r'\b\w+\b', line)
 
-            for word in words:
-                if is_literal(word):
+            <span class="reserved-word">for</span> word <span class="reserved-word">in</span> words:
+                <span class="reserved-word">if</span> is_literal(word):
                     category = determine_literal_category(word)
-                elif is_function(word):
+                <span class="reserved-word">elif</span> is_function(word):
                     category = 'Function'
-                else:
+                <span class="reserved-word">else</span>:
                     category = determine_identifier_category(word)
 
-                if category:
+                <span class="reserved-word">if</span> category:
                     categories[category].append(word)
 
-    return categories
+    <span class="reserved-word">return</span> categories
 
-def is_literal(word):
-    try:
+<span class="reserved-word">def</span> is_literal(word):
+    <span class="reserved-word">try</span>:
         eval(word)
-        return True
-    except (SyntaxError, NameError, ValueError):
-        return False
+        <span class="reserved-word">return</span> <span class="reserved-word">True</span>
+    <span class="reserved-word">except</span> (SyntaxError, NameError, ValueError):
+        <span class="reserved-word">return</span> <span class="reserved-word">False</span>
 
-def determine_literal_category(literal):
-    if isinstance(eval(literal), str):
-        return 'String'
-    elif isinstance(eval(literal), int):
-        return 'Integer'
-    elif isinstance(eval(literal), bool):
-        return 'Boolean'
-    else:
-        return None
+<span class="reserved-word">def</span> determine_literal_category(literal):
+    <span class="reserved-word">if</span> isinstance(eval(literal), str):
+        <span class="reserved-word">return</span> 'String'
+    <span class="reserved-word">elif</span> isinstance(eval(literal), int):
+        <span class="reserved-word">return</span> 'Integer'
+    <span class="reserved-word">elif</span> isinstance(eval(literal), bool):
+        <span class="reserved-word">return</span> 'Boolean'
+    <span class="reserved-word">else</span>:
+        <span class="reserved-word">return</span> <span class="reserved-word">None</span>
 
-def is_function(word):
-    pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*\(\)$'
-    return re.match(pattern, word) is not None
+<span class="reserved-word">def</span> is_function(word):
+    pattern = r'^[a<span class="arithmetic-operator">-</span>zA<span class="arithmetic-operator">-</span>Z_][a<span class="arithmetic-operator">-</span>zA<span class="arithmetic-operator">-</span>Z0<span class="arithmetic-operator">-</span>9_]*\(\)$'
+    <span class="reserved-word">return</span> re.match(pattern, word) <span class="reserved-word">is</span> <span class="reserved-word">not</span> <span class="reserved-word">None</span>
 
-def determine_identifier_category(identifier):
-    pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*$'
-    if re.match(pattern, identifier):
-        return 'Identifier'
-    else:
-        return None
-def get_category_counts(categories):
+<span class="reserved-word">def</span> determine_identifier_category(identifier):
+    pattern = r'^[a<span class="arithmetic-operator">-</span>zA<span class="arithmetic-operator">-</span>Z_][a<span class="arithmetic-operator">-</span>zA<span class="arithmetic-operator">-</span>Z0<span class="arithmetic-operator">-</span>9_]*$'
+    <span class="reserved-word">if</span> re.match(pattern, identifier):
+        <span class="reserved-word">return</span> 'Identifier'
+    <span class="reserved-word">else</span>:
+        <span class="reserved-word">return</span> <span class="reserved-word">None</span>
+<span class="reserved-word">def</span> get_category_counts(categories):
     counts = {}
-    for category in categories:
+    <span class="reserved-word">for</span> category <span class="reserved-word">in</span> categories:
         counts[category] = len(categories[category])
-    return counts
+    <span class="reserved-word">return</span> counts
 </p>
     </body>
   </html>
