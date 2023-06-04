@@ -56,4 +56,3 @@ In conclusion, while the specific implementation of a lexical analyzer may not h
 ## **References**
 
 1. Friedl, J. E. (2006). *Mastering Regular Expressions* (3rd ed.). O'Reilly Media.
-
