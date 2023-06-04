@@ -3,12 +3,12 @@
 }/*  False None True and class def is lambda nonlocal not or  as assert async await break continue del elif else if except finally for from global import in pass raise return try while with yield */
 
 .arithmetic-operator{
-color:rgb(255, 255, 0)
-}/*  + - = / *   */
+color:rgb(184, 184, 0)
+}/*  + - = / * */
 
 .comparative-operator{
-color: pink;
-}/* == != >= <= */
+color: rgb(69, 226, 190);
+}/* == != >= <= =*/
 
 .comment{
 color: rgb(0, 255, 0);
@@ -25,5 +25,7 @@ color: black;
 .variable{
   color: darkgreen;
 }/*str int bool char*/
-
+.predef{
+  color: red;
+}
 

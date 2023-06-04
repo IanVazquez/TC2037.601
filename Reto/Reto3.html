@@ -1,0 +1,185 @@
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <title>Python to Html syntax</title>
+      <link rel="stylesheet" href="Reto.css" />
+    </head>
+    <body>
+      <!-- The result of Elixir code goes here -->
+      <pre><span class="comment">#</span> Keyword: <span class="reserved-word">as</span>
+<span class="reserved-word">import</span> math <span class="reserved-word">as</span> m
+
+<span class="comment">#</span> Keywords: <span class="reserved-word">False</span>, <span class="reserved-word">None</span>, <span class="reserved-word">True</span>, <span class="reserved-word">and</span>, <span class="reserved-word">class</span>, <span class="reserved-word">def</span>, <span class="reserved-word">is</span>, <span class="reserved-word">lambda</span>, <span class="reserved-word">not</span>, <span class="reserved-word">or</span>, <span class="reserved-word">as</span>, <span class="reserved-word">assert</span>, async, await,
+<span class="comment">#</span> <span class="reserved-word">break</span>, <span class="reserved-word">continue</span>, <span class="reserved-word">del</span>, <span class="reserved-word">elif</span>, <span class="reserved-word">else</span>, <span class="reserved-word">if</span>, <span class="reserved-word">except</span>, <span class="reserved-word">finally</span>, <span class="reserved-word">for</span>, <span class="reserved-word">from</span>, <span class="reserved-word">global</span>, <span class="reserved-word">import</span>, <span class="reserved-word">in</span>, <span class="reserved-word">pass</span>, <span class="reserved-word">raise</span>, <span class="reserved-word">return</span>, <span class="reserved-word">try</span>, <span class="reserved-word">while</span>, <span class="reserved-word">with</span>, <span class="reserved-word">yield</span>
+
+<span class="comment">#</span> Definition of a <span class="reserved-word">class</span>
+<span class="reserved-word">class</span> MiClase:
+    <span class="reserved-word">def</span> __init__<span class="parenthesis">(</span>self<span class="parenthesis">)</span>:
+        self.valor <span class="comparative-operator">=</span> <span class="reserved-word">None</span>
+
+    <span class="reserved-word">def</span> establecer_valor<span class="parenthesis">(</span>self, nuevo_valor<span class="parenthesis">)</span>:
+        self.valor <span class="comparative-operator">=</span> nuevo_valor
+
+<span class="comment">#</span> Creation of an instance of the <span class="reserved-word">class</span>
+objeto <span class="comparative-operator">=</span> MiClase<span class="parenthesis">(</span><span class="parenthesis">)</span>
+
+<span class="comment">#</span> Usage of keywords
+<span class="reserved-word">if</span> objeto.valor <span class="reserved-word">is</span> <span class="reserved-word">None</span> <span class="reserved-word">or</span> objeto.valor <span class="comparative-operator">=</span><span class="comparative-operator">=</span> <span class="reserved-word">False</span>:
+    objeto.establecer_valor<span class="parenthesis">(</span><span class="reserved-word">True</span><span class="parenthesis">)</span>
+    <span class="predef">print</span><span class="parenthesis">(</span>"The value has been changed to <span class="reserved-word">True</span>"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Usage of <span class="reserved-word">lambda</span>
+suma <span class="comparative-operator">=</span> <span class="reserved-word">lambda</span> x, y: x <span class="arithmetic-operator">+</span> y
+resultado <span class="comparative-operator">=</span> suma<span class="parenthesis">(</span>3, 5<span class="parenthesis">)</span>
+<span class="predef">print</span><span class="parenthesis">(</span>"The result of the sum <span class="reserved-word">is</span>:", resultado<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Definition of a function
+<span class="reserved-word">def</span> ejemplo_funcion<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+    variable_externa <span class="comparative-operator">=</span> "External"
+
+    <span class="reserved-word">def</span> funcion_interna<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+        variable_interna <span class="comparative-operator">=</span> "Internal"
+        <span class="predef">print</span><span class="parenthesis">(</span>"Internal value:", variable_interna<span class="parenthesis">)</span>
+        <span class="predef">print</span><span class="parenthesis">(</span>"External value:", variable_externa<span class="parenthesis">)</span>
+
+        variable_externa <span class="comparative-operator">=</span> variable_externa.upper<span class="parenthesis">(</span><span class="parenthesis">)</span>
+        <span class="predef">print</span><span class="parenthesis">(</span>"Modified external value:", variable_externa<span class="parenthesis">)</span>
+
+    funcion_interna<span class="parenthesis">(</span><span class="parenthesis">)</span>
+
+<span class="comment">#</span> Usage of keywords
+ejemplo_funcion<span class="parenthesis">(</span><span class="parenthesis">)</span>
+
+<span class="comment">#</span> Usage of '<span class="reserved-word">not</span>' <span class="reserved-word">and</span> '<span class="reserved-word">and</span>'
+condition_1 <span class="comparative-operator">=</span> <span class="reserved-word">True</span>
+condition_2 <span class="comparative-operator">=</span> <span class="reserved-word">False</span>
+
+<span class="reserved-word">if</span> <span class="reserved-word">not</span> condition_1 <span class="reserved-word">and</span> condition_2:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Both conditions are true."<span class="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"At least one of the conditions <span class="reserved-word">is</span> false."<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">assert</span>
+valor <span class="comparative-operator">=</span> 10
+<span class="reserved-word">assert</span> valor <span class="comparative-operator">></span> 0, "The value must be greater than zero"
+
+<span class="comment">#</span> Keywords: async <span class="reserved-word">and</span> await
+<span class="reserved-word">import</span> asyncio
+
+async <span class="reserved-word">def</span> my_function<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Starting my_function"<span class="parenthesis">)</span>
+    await asyncio.sleep<span class="parenthesis">(</span>2<span class="parenthesis">)</span>
+    <span class="predef">print</span><span class="parenthesis">(</span>"Finishing my_function"<span class="parenthesis">)</span>
+
+asyncio.run<span class="parenthesis">(</span>my_function<span class="parenthesis">(</span><span class="parenthesis">)</span><span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keywords: <span class="reserved-word">break</span> <span class="reserved-word">and</span> <span class="reserved-word">continue</span>
+<span class="reserved-word">for</span> i <span class="reserved-word">in</span> <span class="reserved-word">range</span><span class="parenthesis">(</span>1, 11<span class="parenthesis">)</span>:
+    <span class="reserved-word">if</span> i <span class="comparative-operator">=</span><span class="comparative-operator">=</span> 5:
+        <span class="reserved-word">break</span>
+    <span class="reserved-word">if</span> i <span class="arithmetic-operator">%</span> 2 <span class="comparative-operator">=</span><span class="comparative-operator">=</span> 0:
+        <span class="reserved-word">continue</span>
+    <span class="predef">print</span><span class="parenthesis">(</span>i<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">del</span>
+my_list <span class="comparative-operator">=</span> <span class="parenthesis">[</span>1, 2, 3, 4, 5<span class="parenthesis">]</span>
+<span class="predef">print</span><span class="parenthesis">(</span>my_list<span class="parenthesis">)</span>
+<span class="reserved-word">del</span> my_list<span class="parenthesis">[</span>2<span class="parenthesis">]</span>
+<span class="predef">print</span><span class="parenthesis">(</span>my_list<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keywords: <span class="reserved-word">elif</span> <span class="reserved-word">and</span> <span class="reserved-word">else</span>
+value <span class="comparative-operator">=</span> 15
+
+<span class="reserved-word">if</span> value <span class="comparative-operator"><</span> 10:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The value <span class="reserved-word">is</span> less than 10"<span class="parenthesis">)</span>
+<span class="reserved-word">elif</span> value <span class="comparative-operator"><</span> 20:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The value <span class="reserved-word">is</span> between 10 <span class="reserved-word">and</span> 19"<span class="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The value <span class="reserved-word">is</span> greater <span class="reserved-word">or</span> equal to 20"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">if</span>
+number <span class="comparative-operator">=</span> 7
+<span class="reserved-word">if</span> number <span class="arithmetic-operator">%</span> 2 <span class="comparative-operator">=</span><span class="comparative-operator">=</span> 0:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The number <span class="reserved-word">is</span> even"<span class="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The number <span class="reserved-word">is</span> odd"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keywords: <span class="reserved-word">except</span> <span class="reserved-word">and</span> <span class="reserved-word">raise</span>
+<span class="reserved-word">try</span>:
+    result <span class="comparative-operator">=</span> 10 <span class="arithmetic-operator">/</span> 0
+<span class="reserved-word">except</span> ZeroDivisionError:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Error: division by zero"<span class="parenthesis">)</span>
+    <span class="reserved-word">raise</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">finally</span>
+<span class="reserved-word">try</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Try block"<span class="parenthesis">)</span>
+<span class="reserved-word">finally</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Finally block"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">for</span>
+<span class="reserved-word">for</span> j <span class="reserved-word">in</span> <span class="reserved-word">range</span><span class="parenthesis">(</span>1, 6<span class="parenthesis">)</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>j<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keywords: <span class="reserved-word">from</span> <span class="reserved-word">and</span> <span class="reserved-word">import</span>
+<span class="reserved-word">from</span> math <span class="reserved-word">import</span> pi <span class="reserved-word">as</span> pi_value
+<span class="predef">print</span><span class="parenthesis">(</span>"The value of pi <span class="reserved-word">is</span>:", pi_value<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">global</span>
+my_global_variable <span class="comparative-operator">=</span> 5
+
+<span class="reserved-word">def</span> my_function<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+    <span class="reserved-word">global</span> my_global_variable
+    my_global_variable <span class="comparative-operator">=</span> 10
+
+my_function<span class="parenthesis">(</span><span class="parenthesis">)</span>
+<span class="predef">print</span><span class="parenthesis">(</span>"The value of my_global_variable <span class="reserved-word">is</span>:", my_global_variable<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">in</span>
+my_number_list <span class="comparative-operator">=</span> <span class="parenthesis">[</span>1, 2, 3, 4, 5<span class="parenthesis">]</span>
+<span class="reserved-word">if</span> 3 <span class="reserved-word">in</span> my_number_list:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The number 3 <span class="reserved-word">is</span> <span class="reserved-word">in</span> the list"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">pass</span>
+comparison_value <span class="comparative-operator">=</span> 10
+<span class="reserved-word">if</span> comparison_value <span class="comparative-operator">></span> 5:
+    <span class="reserved-word">pass</span>
+<span class="reserved-word">else</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>"The value <span class="reserved-word">is</span> less than <span class="reserved-word">or</span> equal to 5"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">return</span>
+<span class="reserved-word">def</span> sum<span class="parenthesis">(</span>a, b<span class="parenthesis">)</span>:
+    <span class="reserved-word">return</span> a <span class="arithmetic-operator">+</span> b
+
+sum_result <span class="comparative-operator">=</span> sum<span class="parenthesis">(</span>3, 4<span class="parenthesis">)</span>
+<span class="predef">print</span><span class="parenthesis">(</span>"The result of the sum <span class="reserved-word">is</span>:", sum_result<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">try</span>
+<span class="reserved-word">try</span>:
+    result <span class="comparative-operator">=</span> 10 <span class="arithmetic-operator">/</span> 0
+<span class="reserved-word">except</span> ZeroDivisionError:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Error: division by zero"<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">while</span>
+while_counter <span class="comparative-operator">=</span> 0
+<span class="reserved-word">while</span> while_counter <span class="comparative-operator"><</span> 5:
+    <span class="predef">print</span><span class="parenthesis">(</span>"Counter:", while_counter<span class="parenthesis">)</span>
+    while_counter <span class="arithmetic-operator">+</span><span class="comparative-operator">=</span> 1
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">with</span>
+<span class="reserved-word">with</span> open<span class="parenthesis">(</span>"file.txt", "r"<span class="parenthesis">)</span> <span class="reserved-word">as</span> text_file:
+    file_content <span class="comparative-operator">=</span> text_file.read<span class="parenthesis">(</span><span class="parenthesis">)</span>
+    <span class="predef">print</span><span class="parenthesis">(</span>"File content:", file_content<span class="parenthesis">)</span>
+
+<span class="comment">#</span> Keyword: <span class="reserved-word">yield</span>
+<span class="reserved-word">def</span> number_generator<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+    <span class="reserved-word">yield</span> 1
+    <span class="reserved-word">yield</span> 2
+    <span class="reserved-word">yield</span> 3
+
+<span class="reserved-word">for</span> num <span class="reserved-word">in</span> number_generator<span class="parenthesis">(</span><span class="parenthesis">)</span>:
+    <span class="predef">print</span><span class="parenthesis">(</span>num<span class="parenthesis">)</span>
+
+</pre>
+    </body>
+  </html>
