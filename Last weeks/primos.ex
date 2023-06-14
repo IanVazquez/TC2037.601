@@ -3,7 +3,7 @@
 # Ian Luis Vázquez Morán
 # 2023-06-09
 defmodule Hw.Primes do
-  # Function to calculate the sum of prime numbers up to a given limit
+  # Function to calculate the sum of prime numbers up to a given limit calculated sequentially
   def sum_primes(limit) do
     sum_range({1, limit - 1})
   end
