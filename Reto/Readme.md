@@ -5,6 +5,25 @@
 | **Ian Luis Vázquez Moran \| A01027225** | **6/16/2023**    |
 | **Domingo Mora Pérez \| A01783317**      |                  |
 
+## how can i run it?
+
+**Sequential Execution:**
+
+To run the program sequentially, use the following function in Elixir:
+*File.create_html_file()*
+This will process the python files sequentially, one by one.
+
+**Parallel Execution:**
+
+To run the program in parallel, use the function File.create_html_file(cores), where cores is the number of cores you want to use. Make sure cores is an integer greater than 0.
+
+*File.create_html_file(4)* (Run in parallel with 4 cores)
+
+This will process the python files in parallel using the specified number of cores.
+
+## **It is very important to have the Python files in the same directory as the Elixir file for the program to work correctly.**
+
+
 In this project, we implemented a lexical analyzer in Python using regular expressions. The goal was to read a source code file and identify the different lexical categories present in the code.
 
 We chose Python as the programming language for this project because of its familiar syntax and built-in support for regular expressions. Regular expressions provided a simple and efficient way to match and extract the lexical elements from the source code.
