@@ -23,14 +23,14 @@ It's important to note that the execution time may also be affected by factors s
 
 The execution time of the create_html_file/1 function with different numbers of cores is as follows:
 
-With 1 core: 0.313139 s
-With 2 cores: 0.345907 s
-With 3 cores: 0.353791 s
-With 4 cores: 0.341401 s
-With 5 cores: 0.330751 s
-With 6 cores: 0.353177 s
-With 7 cores: 0.345395 s
-With 8 cores: 0.311398 s
+1. With 1 core: 0.313139 s
+2. With 2 cores: 0.345907 s
+3. With 3 cores: 0.353791 s
+4. With 4 cores: 0.341401 s
+5. With 5 cores: 0.330751 s
+6. With 6 cores: 0.353177 s
+7. With 7 cores: 0.345395 s
+8. With 8 cores: 0.311398 s
 # Reflection on Performance and Execution Time:
 
 Analyzing the results of the performance tests, we observe that the execution time decreases as the number of cores increases. Particularly, with 8 cores, a significantly lower execution time (0.311398 s) is achieved compared to the sequential version. This demonstrates the benefits of utilizing parallelism and leveraging multiple cores.
