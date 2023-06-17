@@ -1,0 +1,185 @@
+  <!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <title>Python to Html syntax</title>
+      <link rel="stylesheet" href="Reto.css" />
+    </head>
+    <body>
+      <!-- The result of Elixir code goes here -->
+      <pre><span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">as</span></span>
+<span class="reserved-word">import</span> math <span class="reserved-word">as</span> m
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: <span class="reserved-word">False</span>, <span class="reserved-word">None</span>, <span class="reserved-word">True</span>, <span class="reserved-word">and</span>, <span class="reserved-word">class</span>, <span class="reserved-word">def</span>, <span class="reserved-word">is</span>, <span class="reserved-word">lambda</span>, <span class="reserved-word">not</span>, <span class="reserved-word">or</span>, <span class="reserved-word">as</span>, <span class="reserved-word">assert</span>, async, await,</span>
+<span <span class="reserved-word">class</span>="comment"># <span class="reserved-word">break</span>, <span class="reserved-word">continue</span>, <span class="reserved-word">del</span>, <span class="reserved-word">elif</span>, <span class="reserved-word">else</span>, <span class="reserved-word">if</span>, <span class="reserved-word">except</span>, <span class="reserved-word">finally</span>, <span class="reserved-word">for</span>, <span class="reserved-word">from</span>, <span class="reserved-word">global</span>, <span class="reserved-word">import</span>, <span class="reserved-word">in</span>, <span class="reserved-word">pass</span>, <span class="reserved-word">raise</span>, <span class="reserved-word">return</span>, <span class="reserved-word">try</span>, <span class="reserved-word">while</span>, <span class="reserved-word">with</span>, <span class="reserved-word">yield</span></span>
+
+<span <span class="reserved-word">class</span>="comment"># Definition of a <span class="reserved-word">class</span></span>
+<span class="reserved-word">class</span> MiClase:
+    <span class="reserved-word">def</span> __init__<span <span class="reserved-word">class</span>="parenthesis">(</span>self<span <span class="reserved-word">class</span>="parenthesis">)</span>:
+        self.valor = <span class="reserved-word">None</span>
+
+    <span class="reserved-word">def</span> establecer_valor<span <span class="reserved-word">class</span>="parenthesis">(</span>self, nuevo_valor<span <span class="reserved-word">class</span>="parenthesis">)</span>:
+        self.valor = nuevo_valor
+
+<span <span class="reserved-word">class</span>="comment"># Creation of an instance of the <span class="reserved-word">class</span></span>
+objeto = MiClase<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Usage of keywords</span>
+<span class="reserved-word">if</span> objeto.valor <span class="reserved-word">is</span> <span class="reserved-word">None</span> <span class="reserved-word">or</span> objeto.valor == <span class="reserved-word">False</span>:
+    objeto.establecer_valor<span <span class="reserved-word">class</span>="parenthesis">(</span><span class="reserved-word">True</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value has been changed to <span class="reserved-word">True</span>"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Usage of <span class="reserved-word">lambda</span></span>
+suma = <span class="reserved-word">lambda</span> x, y: x + y
+resultado = suma<span <span class="reserved-word">class</span>="parenthesis">(</span>3, 5<span <span class="reserved-word">class</span>="parenthesis">)</span>
+print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The result of the sum <span class="reserved-word">is</span>:"</span>, resultado<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Definition of a function</span>
+<span class="reserved-word">def</span> ejemplo_funcion<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    variable_externa = <span <span class="reserved-word">class</span>="string">"External"</span>
+
+    <span class="reserved-word">def</span> funcion_interna<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+        variable_interna = <span <span class="reserved-word">class</span>="string">"Internal"</span>
+        print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Internal value:"</span>, variable_interna<span <span class="reserved-word">class</span>="parenthesis">)</span>
+        print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"External value:"</span>, variable_externa<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+        variable_externa = variable_externa.upper<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+        print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Modified external value:"</span>, variable_externa<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+    funcion_interna<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Usage of keywords</span>
+ejemplo_funcion<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Usage of <span <span class="reserved-word">class</span>="string">'<span class="reserved-word">not</span>'</span> <span class="reserved-word">and</span> <span <span class="reserved-word">class</span>="string">'<span class="reserved-word">and</span>'</span></span>
+condition_1 = <span class="reserved-word">True</span>
+condition_2 = <span class="reserved-word">False</span>
+
+<span class="reserved-word">if</span> <span class="reserved-word">not</span> condition_1 <span class="reserved-word">and</span> condition_2:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Both conditions are true."</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"At least one of the conditions <span class="reserved-word">is</span> false."</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">assert</span></span>
+valor = 10
+<span class="reserved-word">assert</span> valor > 0, <span <span class="reserved-word">class</span>="string">"The value must be greater than zero"</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: async <span class="reserved-word">and</span> await</span>
+<span class="reserved-word">import</span> asyncio
+
+async <span class="reserved-word">def</span> my_function<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Starting my_function"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+    await asyncio.sleep<span <span class="reserved-word">class</span>="parenthesis">(</span>2<span <span class="reserved-word">class</span>="parenthesis">)</span>
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Finishing my_function"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+asyncio.run<span <span class="reserved-word">class</span>="parenthesis">(</span>my_function<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: <span class="reserved-word">break</span> <span class="reserved-word">and</span> <span class="reserved-word">continue</span></span>
+<span class="reserved-word">for</span> i <span class="reserved-word">in</span> <span class="reserved-word">range</span><span <span class="reserved-word">class</span>="parenthesis">(</span>1, 11<span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    <span class="reserved-word">if</span> i == 5:
+        <span class="reserved-word">break</span>
+    <span class="reserved-word">if</span> i % 2 == 0:
+        <span class="reserved-word">continue</span>
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span>i<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">del</span></span>
+my_list = [1, 2, 3, 4, 5]
+print<span <span class="reserved-word">class</span>="parenthesis">(</span>my_list<span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">del</span> my_list[2]
+print<span <span class="reserved-word">class</span>="parenthesis">(</span>my_list<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: <span class="reserved-word">elif</span> <span class="reserved-word">and</span> <span class="reserved-word">else</span></span>
+value = 15
+
+<span class="reserved-word">if</span> value < 10:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value <span class="reserved-word">is</span> less than 10"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">elif</span> value < 20:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value <span class="reserved-word">is</span> between 10 <span class="reserved-word">and</span> 19"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value <span class="reserved-word">is</span> greater <span class="reserved-word">or</span> equal to 20"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">if</span></span>
+number = 7
+<span class="reserved-word">if</span> number % 2 == 0:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The number <span class="reserved-word">is</span> even"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">else</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The number <span class="reserved-word">is</span> odd"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: <span class="reserved-word">except</span> <span class="reserved-word">and</span> <span class="reserved-word">raise</span></span>
+<span class="reserved-word">try</span>:
+    result = 10 / 0
+<span class="reserved-word">except</span> ZeroDivisionError:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Error: division by zero"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+    <span class="reserved-word">raise</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">finally</span></span>
+<span class="reserved-word">try</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Try block"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+<span class="reserved-word">finally</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Finally block"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">for</span></span>
+<span class="reserved-word">for</span> j <span class="reserved-word">in</span> <span class="reserved-word">range</span><span <span class="reserved-word">class</span>="parenthesis">(</span>1, 6<span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span>j<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keywords: <span class="reserved-word">from</span> <span class="reserved-word">and</span> <span class="reserved-word">import</span></span>
+<span class="reserved-word">from</span> math <span class="reserved-word">import</span> pi <span class="reserved-word">as</span> pi_value
+print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value of pi <span class="reserved-word">is</span>:"</span>, pi_value<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">global</span></span>
+my_global_variable = 5
+
+<span class="reserved-word">def</span> my_function<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    <span class="reserved-word">global</span> my_global_variable
+    my_global_variable = 10
+
+my_function<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value of my_global_variable <span class="reserved-word">is</span>:"</span>, my_global_variable<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">in</span></span>
+my_number_list = [1, 2, 3, 4, 5]
+<span class="reserved-word">if</span> 3 <span class="reserved-word">in</span> my_number_list:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The number 3 <span class="reserved-word">is</span> <span class="reserved-word">in</span> the list"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">pass</span></span>
+comparison_value = 10
+<span class="reserved-word">if</span> comparison_value > 5:
+    <span class="reserved-word">pass</span>
+<span class="reserved-word">else</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The value <span class="reserved-word">is</span> less than <span class="reserved-word">or</span> equal to 5"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">return</span></span>
+<span class="reserved-word">def</span> sum<span <span class="reserved-word">class</span>="parenthesis">(</span>a, b<span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    <span class="reserved-word">return</span> a + b
+
+sum_result = sum<span <span class="reserved-word">class</span>="parenthesis">(</span>3, 4<span <span class="reserved-word">class</span>="parenthesis">)</span>
+print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"The result of the sum <span class="reserved-word">is</span>:"</span>, sum_result<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">try</span></span>
+<span class="reserved-word">try</span>:
+    result = 10 / 0
+<span class="reserved-word">except</span> ZeroDivisionError:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Error: division by zero"</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">while</span></span>
+while_counter = 0
+<span class="reserved-word">while</span> while_counter < 5:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"Counter:"</span>, while_counter<span <span class="reserved-word">class</span>="parenthesis">)</span>
+    while_counter += 1
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">with</span></span>
+<span class="reserved-word">with</span> open<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"file.txt"</span>, <span <span class="reserved-word">class</span>="string">"r"</span><span <span class="reserved-word">class</span>="parenthesis">)</span> <span class="reserved-word">as</span> text_file:
+    file_content = text_file.read<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="string">"File content:"</span>, file_content<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+<span <span class="reserved-word">class</span>="comment"># Keyword: <span class="reserved-word">yield</span></span>
+<span class="reserved-word">def</span> number_generator<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    <span class="reserved-word">yield</span> 1
+    <span class="reserved-word">yield</span> 2
+    <span class="reserved-word">yield</span> 3
+
+<span class="reserved-word">for</span> num <span class="reserved-word">in</span> number_generator<span <span class="reserved-word">class</span>="parenthesis">(</span><span <span class="reserved-word">class</span>="parenthesis">)</span>:
+    print<span <span class="reserved-word">class</span>="parenthesis">(</span>num<span <span class="reserved-word">class</span>="parenthesis">)</span>
+
+</pre>
+    </body>
+  </html>
