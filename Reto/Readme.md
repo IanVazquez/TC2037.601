@@ -5,7 +5,7 @@
 | **Ian Luis Vázquez Moran \| A01027225** | **6/16/2023**    |
 | **Domingo Mora Pérez \| A01783317**      |                  |
 
-## how can i run it?
+## How can i run it?
 
 **Sequential Execution:**
 
