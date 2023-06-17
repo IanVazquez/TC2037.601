@@ -1,27 +1,30 @@
 .reserved-word {
-  color: blue;
-}/*  False None True and class def is lambda nonlocal not or  as assert async await break continue del elif else if except finally for from global import in pass raise return try while with yield */
-
-.arithmetic-operator{
-color:rgb(184, 184, 0)
-}/*  + - = / * */
-
-.comparative-operator{
-color: rgb(69, 226, 190);
-}/* == != >= <= =*/
-
-.comment{
-color: rgb(0, 255, 0);
-}/* Everything after # until a newline is given */
-
-.parenthesis{
-  color:aqua;
-}/* This ( ) [ ] { } */
-
-.variable{
-  color: darkgreen;
-}/*str int bool char*/
-.predef{
-  color: red;
-}/*print*/
-
+    color: blue;
+  }/*  False None True and class def is lambda nonlocal not or  as assert async await break continue del elif else if except finally for from global import in pass raise return try while with yield */
+  
+  .arithmetic-operator{
+  color:rgb(184, 184, 0)
+  }/*  + - / * */
+  
+  .comparative-operator{
+  color: rgb(69, 226, 190);
+  }/* == != >= <= = < >*/
+  
+  .comment{
+  color: rgb(0, 255, 0);
+  }/* Everything after # until a newline is given */
+  
+  .parenthesis{
+    color:aqua;
+  }/* This ( ) [ ] { } */
+  
+  .variable{
+    color: darkgreen;
+  }/*str int bool char*/
+  .predef{
+    color: red;
+  }/*print*/
+  
+  .string{
+    color: orange
+  }/* anything enclosed between " " or ' ' */
