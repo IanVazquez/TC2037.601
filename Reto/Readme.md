@@ -10,14 +10,14 @@
 **Sequential Execution:**
 
 To run the program sequentially, use the following function in Elixir:
-*File.create_html_file()*
+*Archivo.create_html_file()*
 This will process the python files sequentially, one by one.
 
 **Parallel Execution:**
 
 To run the program in parallel, use the function File.create_html_file(cores), where cores is the number of cores you want to use. Make sure cores is an integer greater than 0.
 
-*File.create_html_file(4)* (Run in parallel with 4 cores)
+*Archivo.create_html_file(4)* (Run in parallel with 4 cores)
 
 This will process the python files in parallel using the specified number of cores.
 
